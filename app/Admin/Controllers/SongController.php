@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Author;
+use App\Song;
 
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -11,7 +11,7 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 
-class AuthorController extends Controller
+class SongController extends Controller
 {
     use ModelForm;
 
@@ -24,8 +24,8 @@ class AuthorController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('歌手管理');
-            $content->description('全部歌手');
+            $content->header('header');
+            $content->description('description');
 
             $content->body($this->grid());
         });
@@ -41,8 +41,8 @@ class AuthorController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('歌手管理');
-            $content->description('全部歌手');
+            $content->header('header');
+            $content->description('description');
 
             $content->body($this->form()->edit($id));
         });
@@ -57,8 +57,8 @@ class AuthorController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('歌手管理');
-            $content->description('全部歌手');
+            $content->header('header');
+            $content->description('description');
 
             $content->body($this->form());
         });
@@ -71,13 +71,12 @@ class AuthorController extends Controller
      */
     protected function grid()
     {
-        return Admin::grid(Author::class, function (Grid $grid) {
+        return Admin::grid(Song::class, function (Grid $grid) {
 
-//            $grid->id('ID')->sortable();
-//
-//            $grid->created_at();
-//            $grid->updated_at();
-            $grid->aname('歌手');
+            $grid->id('ID')->sortable();
+
+            $grid->created_at();
+            $grid->updated_at();
         });
     }
 
@@ -88,9 +87,12 @@ class AuthorController extends Controller
      */
     protected function form()
     {
-        return Admin::form(Author::class, function (Form $form) {
+        return Admin::form(Song::class, function (Form $form) {
 
-            $form->display('aname', '歌手');
+            $form->display('id', 'ID');
+
+            $form->display('created_at', 'Created At');
+            $form->display('updated_at', 'Updated At');
         });
     }
 }

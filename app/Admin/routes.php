@@ -13,5 +13,6 @@ Route::group([
     $router->get('/', 'HomeController@index');
     $router->resource('vods', "VodController");
     $router->resource('authors', "AuthorController");
+    $router->resource('tabs', "TabController");
 });
 
