@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','api_token','quest_len','speed'
     ];
 
     /**
@@ -24,6 +24,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token','api_token',
     ];
+
+    public static function checkToken($apiToken)
+    {
+        $objUser = self::where('api_token', '=', $apiToken)->firstOrFail();
+        return $objUser;
+    }
 }

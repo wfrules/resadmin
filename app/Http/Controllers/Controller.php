@@ -10,4 +10,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    public function getParams($request, $key){
+        $objParams = json_decode($request->parms, 1);
+        return $objParams[$key];
+    }
 }
