@@ -73,7 +73,7 @@ class TrainController extends \App\Http\Controllers\Controller
 
         \DB::beginTransaction();
         $objUser = User::where('id', '=', 1)->firstOrFail();
-        $date =  "2018-09-07";
+        $date =  "2018-09-09";
         \App\Questions_Stat::statDaily($objUser,$date);
         var_dump($objUser->name);
         echo "entered~~~~~~~~~~~~~~~~~~~~~~$date";

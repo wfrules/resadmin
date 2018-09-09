@@ -8,7 +8,7 @@ class Questions_Stat extends Model
 {
     protected $table = 'questions_stat';
     protected $fillable = [
-        'created_at', 'combo', 'played', 'duration', 'right', 'wrong', 'users_id', 'stat_date'
+        'created_at', 'combo', 'played', 'duration', 'correct', 'wrong', 'users_id', 'stat_date'
     ];
 
     public function details()
