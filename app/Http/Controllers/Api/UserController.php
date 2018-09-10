@@ -49,6 +49,7 @@ class UserController extends \App\Http\Controllers\Controller
         $objUser =  User::checkToken($sApiToken);
         $objUser->speed = $speed;
         $objUser->quest_len = $quest_len;
+        $objUser->instrument =  $this->getParams($request, 'instrument');
         $objUser->save();
         $arrRet['profile'] = $objUser->toArray();
         return response()->json($arrRet);

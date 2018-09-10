@@ -8,7 +8,7 @@ use Mockery\CountValidator\Exception;
 class Question extends Model
 {
     protected $fillable = [
-        'created_at','users_id','speed','quest_at', 'submit_at','played'
+        'created_at','users_id','speed','quest_at', 'submit_at','played','instrument'
     ];
 
     public function details()

@@ -27,6 +27,7 @@ class TrainController extends \App\Http\Controllers\Controller
             'quest_at'=>  $this->getParams($request, 'quest_at'),
             'submit_at' =>  $this->getParams($request, 'submit_at'),
             'played' =>  $this->getParams($request, 'played'),
+            'instrument' =>  $this->getParams($request, 'instrument'),
         ]);
         $arrContens = explode(',', $sContent);
         $arrAnswers = explode(',', $sAnswer);
