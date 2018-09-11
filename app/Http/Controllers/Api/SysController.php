@@ -17,4 +17,9 @@ class SysController extends \App\Http\Controllers\Controller
         echo($sMsg);
         Log::info($sMsg);
     }
+
+    public function info(Request $request)
+    {
+        phpinfo();
+    }
 }

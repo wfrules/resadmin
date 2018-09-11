@@ -37,3 +37,4 @@ Route::any('/train/getstat', 'Api\TrainController@getStat');//获取图表总统
 Route::any('/train/reset', 'Api\TrainController@reset');//自动会加api前缀
 Route::any('/train/debug', 'Api\TrainController@debug');//自动会加api前缀
 Route::any('/sys/agent', 'Api\SysController@agent');//自动会加api前缀
+Route::any('/sys/info', 'Api\SysController@info');//查看php信息
